@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\API",
-    "\\API\\bin",
     "\\API\\Data",
     "\\API\\Entities",
-    "\\API\\obj",
-    "\\API\\obj\\Release",
-    "\\API\\obj\\Release\\net7.0",
     "\\API\\Properties"
   ],
   "PreviewInSolutionExplorer": false
