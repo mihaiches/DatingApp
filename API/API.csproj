@@ -27,6 +27,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.30.1" />
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
