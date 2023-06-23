@@ -6,24 +6,46 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class ExtendetUserEntity : Migration
+    public partial class ExtendedUserEntity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterColumn<string>(
+                name: "UserName",
+                table: "Users",
+                type: "TEXT",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "TEXT");
+
+            migrationBuilder.AlterColumn<byte[]>(
+                name: "PasswordSalt",
+                table: "Users",
+                type: "BLOB",
+                nullable: true,
+                oldClrType: typeof(byte[]),
+                oldType: "BLOB");
+
+            migrationBuilder.AlterColumn<byte[]>(
+                name: "PasswordHash",
+                table: "Users",
+                type: "BLOB",
+                nullable: true,
+                oldClrType: typeof(byte[]),
+                oldType: "BLOB");
+
             migrationBuilder.AddColumn<string>(
                 name: "City",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Country",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "Created",
@@ -43,29 +65,25 @@ namespace API.Data.Migrations
                 name: "Gender",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Interests",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Introduction",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "KnownAs",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastActive",
@@ -78,8 +96,7 @@ namespace API.Data.Migrations
                 name: "LookingFor",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Photos",
@@ -87,9 +104,9 @@ namespace API.Data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Url = table.Column<string>(type: "TEXT", nullable: false),
+                    Url = table.Column<string>(type: "TEXT", nullable: true),
                     IsMain = table.Column<bool>(type: "INTEGER", nullable: false),
-                    PublicId = table.Column<string>(type: "TEXT", nullable: false),
+                    PublicId = table.Column<string>(type: "TEXT", nullable: true),
                     AppUserId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -154,6 +171,36 @@ namespace API.Data.Migrations
             migrationBuilder.DropColumn(
                 name: "LookingFor",
                 table: "Users");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "UserName",
+                table: "Users",
+                type: "TEXT",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "TEXT",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<byte[]>(
+                name: "PasswordSalt",
+                table: "Users",
+                type: "BLOB",
+                nullable: false,
+                defaultValue: new byte[0],
+                oldClrType: typeof(byte[]),
+                oldType: "BLOB",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<byte[]>(
+                name: "PasswordHash",
+                table: "Users",
+                type: "BLOB",
+                nullable: false,
+                defaultValue: new byte[0],
+                oldClrType: typeof(byte[]),
+                oldType: "BLOB",
+                oldNullable: true);
         }
     }
 }
