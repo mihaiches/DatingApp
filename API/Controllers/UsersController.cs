@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using API.Entities;
 using API.Interfaces;
 using API.DTOs;
 using API.Extensions;
 using AutoMapper;
-using System.Collections;
-using System.Threading.Tasks;
-using System.Security.Claims;
-using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
 using API.Helpers;
 
 namespace API.Controllers
